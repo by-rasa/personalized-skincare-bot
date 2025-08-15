@@ -1,0 +1,53 @@
+version: "3.1"
+
+slots:
+  skin_type:
+    type: categorical
+    values:
+      - oily
+      - dry
+      - combination
+      - sensitive
+      - normal
+    mappings:
+      - type: from_llm
+
+  age:
+    type: text
+    mappings:
+      - type: from_llm
+
+  skin_issues:
+    type: text
+    mappings:
+      - type: from_llm
+
+actions:
+  - action_generate_skincare_routine
+
+responses:
+  utter_welcome_skincare:
+    - text: "Welcome to your personalized skincare consultation! I'll ask you a few questions about your skin to recommend the perfect day and night routine for you."
+
+  utter_ask_skin_type:
+    - text: "What's your skin type? e.g. oily, dry, combination, sensitive, normal"
+      buttons:
+        - title: "Oily"
+          payload: "oily"
+        - title: "Dry" 
+          payload: "dry"
+        - title: "Combination"
+          payload: "combination"
+        - title: "Sensitive"
+          payload: "sensitive"
+        - title: "Normal"
+          payload: "normal"
+
+  utter_ask_age:
+    - text: "What's your age? (13-19), (20-29), (30-39), (40-49), 50+"
+
+  utter_ask_skin_issues:
+    - text: "What specific skin concerns do you have? (e.g., acne, dark spots, wrinkles, dullness, large pores, etc.)"
+
+  utter_routine_complete:
+    - text: "I hope this routine helps improve your skin! Feel free to ask if you have any questions about the products or steps."
