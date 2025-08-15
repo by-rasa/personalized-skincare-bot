@@ -1,3 +1,5 @@
+# 🌸 Personalized Skincare Bot
+
 ## Setup
 * Set `RASA_PRO_LICENSE` and `OPENAI_API_KEY` in `.env` file
 * Install dependecies with `pip install -r requirements.txt`
