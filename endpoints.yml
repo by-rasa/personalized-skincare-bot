@@ -1,0 +1,10 @@
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+model_groups:
+  - id: openai_llm
+    models:
+      - provider: openai
+        model: gpt-4o-2024-11-20
+        timeout: 7
+        max_tokens: 256

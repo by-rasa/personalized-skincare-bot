@@ -1,0 +1,20 @@
+version: "3.1"
+
+flows:
+  skincare_consultation:
+    description: Collect user's skin information and provide personalized skincare routine recommendations
+    steps:
+      - collect: skin_type
+        description: "User's skin type - oily, dry, combination, sensitive, or normal"
+      - collect: age
+        description: "User's age range - teens, twenties, thirties, forties, or fifties_plus"
+      - collect: skin_issues
+        description: "Specific skin concerns like acne, dark spots, wrinkles, dullness, or large pores"
+      - action: action_generate_skincare_routine
+      - action: utter_routine_complete
+
+  start_skincare_consultation:
+    description: Welcome users and start the skincare consultation process
+    steps:
+      - action: utter_welcome_skincare
+      - link: skincare_consultation
